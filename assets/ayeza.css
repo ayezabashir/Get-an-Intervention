@@ -1,5 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #297c6b;
+  --secondary-color: #5bc8af;
+  --bg-color: #194d44;
+  --txt-color: #333;
+  --fade-color: #eaeaea;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+  background-image: url("/assets/images/hero-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  z-index: 1;
+  background: linear-gradient(180deg, #194d41 0%, rgba(25, 77, 65, 0.7) 70%);
+}
+
+.main .wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: 5;
 }
