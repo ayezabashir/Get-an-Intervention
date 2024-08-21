@@ -11,26 +11,39 @@
     <!-- header + hero section-->
     <main class="main">
       <div class="container">
-        <header>
+        <header class="main-header">
           <div>
             <img src="/assets/images/logo.svg" alt="get an intervention" />
           </div>
-          <div class="desktop"></div>
-          <div class="mobile"></div>
+          <div class="header-desktop">
+            <ul>
+              <li class="active">home</li>
+              <li>about</li>
+              <li>contact</li>
+            </ul>
+            <div class="contact">
+              <span>CALL NOW FOR A CONSULT </span>
+              <span>123.456.7890</span>
+            </div>
+          </div>
+          <div class="header-mobile">
+            <img class="open-menu" src="/assets/images/menu.svg" alt="" />
+            <img class="close-menu" src="/assets/images/close.png" alt="" />
+            <ul class="menu-items">
+              <li class="active">home</li>
+              <li>about</li>
+              <li>contact</li>
+              <li class="contact">
+                <span>CALL NOW FOR A CONSULT </span>
+                <span>123.456.7890</span>
+              </li>
+            </ul>
+          </div>
         </header>
         <div class="hero-section"></div>
       </div>
-      <svg
-        class="wave"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
-        <path
-          fill="#fff"
-          fill-opacity="0.98"
-          d="M0,256L60,218.7C120,181,240,107,360,101.3C480,96,600,160,720,202.7C840,245,960,267,1080,256C1200,245,1320,203,1380,181.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-        ></path>
-      </svg>
+      <img src="/assets/images/wave.svg" alt="" class="wave" />
+      <!-- <img src="/assets/images/gray-wave.svg" alt="" class="gray-wave" /> -->
     </main>
 
     <!-- Cards section -->
