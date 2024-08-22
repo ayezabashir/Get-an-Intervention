@@ -441,6 +441,7 @@ input:valid ~ label {
 
 /* Video */
 .video-container {
+  margin-top: 50px;
   position: relative;
   overflow: hidden;
   background: url(/assets/images/bg-video.png);
@@ -452,9 +453,93 @@ input:valid ~ label {
 .video-container .video {
   width: 50%;
 }
+.video-container .video .play {
+  position: absolute;
+  z-index: 111;
+  right: 20%;
+  top: 28%;
+  cursor: pointer;
+  transition: var(--transition-all);
+  &:hover {
+    transform: scale(1.1);
+    transition: var(--transition-all);
+  }
+  &:active {
+    transform: scale(0.9);
+    transition: var(--transition-all);
+  }
+}
 .video-container .wave {
   background: transparent;
   width: 50%;
+}
+
+.video-container .video-content {
+  position: absolute;
+  top: 20px;
+  right: 55%;
+  z-index: 11;
+  width: 472px;
+}
+
+.video-container .video-content .points {
+  display: flex;
+  flex-direction: column;
+}
+
+.points .point {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.points .point h3 {
+  color: #fff;
+  margin-bottom: 0;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+}
+.points .point p {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+}
+
+.hero-heading {
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 30px;
+  text-align: left;
+}
+
+.video-tablet {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .video-container .video-content {
+    top: 0;
+    width: 400px;
+  }
+  .video-container .video-content .points {
+    gap: 0;
+  }
+  .points .point h3 {
+    font-size: 16px;
+  }
+  .points .point p {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  .video-container .hero-heading {
+    font-size: 22px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -488,6 +573,91 @@ input:valid ~ label {
   .btns {
     gap: 30px;
   }
+  .desktop {
+    display: none;
+  }
+  .video-tablet {
+    display: block;
+    position: relative;
+  }
+  .video-tablet .video-bg {
+    position: absolute;
+    top: 50px;
+  }
+  .video-tablet .video-bg .hero-heading {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 44px;
+  }
+  .video-bg .points .point {
+    gap: 20px;
+  }
+  .video-bg .points .point h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 5px;
+  }
+  .points .point p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+  .mobile {
+    display: none;
+  }
+  .tab {
+    display: block;
+  }
+  .video-tablet .video-bg .video-content img {
+    width: 20px;
+    height: 20px;
+  }
+  .video-tablet img {
+    width: 100%;
+  }
+  .video-tablet .bg-video-tab {
+    position: relative;
+    top: -56px;
+    z-index: -1;
+  }
+  .video-tablet img.play-vid {
+    width: 150px;
+    position: absolute;
+    z-index: 1111;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, 50px);
+    cursor: pointer;
+  }
+}
+
+.bg-video-container {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-video-container .pop-up-video {
+  width: 100%;
+  position: relative;
+}
+.bg-video-container .close-icon {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  height: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+  z-index: 999999;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -634,5 +804,52 @@ input:valid ~ label {
   .btns {
     grid-template-rows: repeat(auto, 1fr);
     grid-template-columns: repeat(1, 1fr);
+  }
+  .mobile {
+    display: block;
+  }
+  .tab {
+    display: none;
+  }
+  .video-tablet .video-bg {
+    top: 30px;
+  }
+  .video-tablet .video-bg .hero-heading {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+  }
+  .video-bg .points .point {
+    gap: 20px;
+  }
+  .video-bg .points .point h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  .points .point p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .bg-video-container {
+    width: 90%;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer .container {
+    padding-top: 0;
+  }
+  .footer p {
+    text-align: center;
+  }
+  .footer .footer-items {
+    padding: 0;
+  }
+  .footer .footer-items li {
+    padding-right: 5px;
   }
 }
