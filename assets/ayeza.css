@@ -439,6 +439,24 @@ input:valid ~ label {
   }
 }
 
+/* Video */
+.video-container {
+  position: relative;
+  overflow: hidden;
+  background: url(/assets/images/bg-video.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 54%;
+  background-color: var(--bg-color);
+}
+.video-container .video {
+  width: 50%;
+}
+.video-container .wave {
+  background: transparent;
+  width: 50%;
+}
+
 @media screen and (max-width: 900px) {
   .main {
     height: 90vh;
