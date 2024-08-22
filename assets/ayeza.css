@@ -408,6 +408,37 @@ input:valid ~ label {
   z-index: 11;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #757575;
+}
+
+.footer .footer-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.footer .footer-items li {
+  font-size: 14px;
+  border-right: 1px solid var(--txt-color);
+  color: #757575;
+  padding-right: 10px;
+  &:hover {
+    color: var(--txt-color);
+    transition: var(--transition-all);
+  }
+  &:last-child {
+    border-right: 0;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .main {
     height: 90vh;
