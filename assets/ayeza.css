@@ -522,6 +522,82 @@ input:valid ~ label {
   display: none;
 }
 
+.testimonials {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  height: 270px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.testimonials .testimonial {
+  display: none; /* Hide all testimonials initially */
+  height: inherit;
+  align-items: center;
+}
+
+.testimonials .testimonial.active {
+  display: flex; /* Display only the active testimonial */
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100%;
+}
+
+.testimonials .testimonial .test-img {
+  width: 30%;
+}
+
+.testimonials .testimonial .test-img img {
+  border-radius: 10px 0 0 10px;
+  width: 100%;
+}
+
+.testimonials .testimonial .test-quote {
+  position: relative;
+  width: 70%;
+  background: var(--bg-color);
+  height: 100%;
+  padding: 40px;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 18px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.testimonials .testimonial .test-quote .comma {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+}
+
+.testimonials .testimonial .test-quote h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ellipses .ellipse {
+  width: 15px;
+  height: 15px;
+  background: #eaeaea;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.ellipses .ellipse.active {
+  background: var(--secondary-color);
+}
+
+.testimonials .ellipses {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  bottom: -50px;
+}
+
 @media screen and (max-width: 1024px) {
   .video-container .video-content {
     top: 0;
