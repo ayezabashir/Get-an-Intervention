@@ -43,6 +43,15 @@ button {
 button {
   background: transparent;
 }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--txt-color);
+}
 .btn {
   cursor: pointer;
   display: flex;
@@ -347,7 +356,57 @@ input:valid ~ label {
   display: none;
 }
 
-/* testimonial */
+.card-content .card-two {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+.card-content .card-two .card {
+  max-width: 330px;
+}
+
+.btns {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.btns .secondary-btn img {
+  display: none;
+  transition: var(--transition-all);
+}
+.btns .secondary-btn {
+  max-width: 350px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  color: var(--txt-color);
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  &:active {
+    transform: scale(1);
+  }
+  &:hover {
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+  &:hover img {
+    display: block;
+    transition: var(--transition-all);
+  }
+}
+
+.btns .tooltip {
+  position: absolute;
+  top: 94px;
+  z-index: 11;
+}
 
 @media screen and (max-width: 900px) {
   .main {
@@ -377,6 +436,9 @@ input:valid ~ label {
   .cards .card-content .sec-one {
     gap: 30px;
   }
+  .btns {
+    gap: 30px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -396,6 +458,20 @@ input:valid ~ label {
   }
   .desktop-hidden {
     display: block;
+  }
+  .card-content.card-intervention {
+    flex-direction: column;
+    gap: 0;
+  }
+  .cards .card-intervention .card {
+    max-width: 100%;
+  }
+  .cards .card-intervention .card-one .card p i {
+    font-size: 18px;
+  }
+  .btns {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -499,5 +575,15 @@ input:valid ~ label {
   }
   .cards .card-content .card .secondary-btn {
     margin-top: 40px;
+  }
+  .cards .card-intervention .card-two {
+    flex-direction: column;
+  }
+  .card-intervention .card-two {
+    gap: 0;
+  }
+  .btns {
+    grid-template-rows: repeat(auto, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
