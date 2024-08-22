@@ -532,6 +532,30 @@ input:valid ~ label {
   align-items: center;
 }
 
+.arrow {
+  display: block;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+.left-arrow {
+  left: -60px;
+  transition: var(--transition-all);
+}
+.left-arrow:hover path {
+  fill: var(--secondary-color);
+  transition: var(--transition-all);
+}
+.right-arrow {
+  right: -60px;
+  z-index: 11;
+  transition: var(--transition-all);
+}
+.right-arrow:hover path {
+  transition: var(--transition-all);
+  fill: var(--secondary-color);
+}
+
 .testimonials .testimonial {
   display: none; /* Hide all testimonials initially */
   height: inherit;
@@ -767,6 +791,19 @@ input:valid ~ label {
   .btns {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
+  }
+  .arrow {
+    display: none;
+  }
+  .testimonials .testimonial .test-quote {
+    height: 79%;
+    padding: 20px;
+  }
+  .testimonials .testimonial .test-quote h3 {
+    font-size: 20px;
+  }
+  .testimonials .testimonial .test-quote i {
+    font-size: 14px;
   }
 }
 

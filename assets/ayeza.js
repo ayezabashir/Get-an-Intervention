@@ -7,6 +7,8 @@ const popupVideo = document.querySelector('.bg-video-container');
 const closePopUp = document.querySelector('.bg-video-container .close-icon')
 const ellipses = document.querySelectorAll('.ellipses .ellipse');
 const testimonials = document.querySelectorAll('.testimonial');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
 
 openMenu.addEventListener('click', () => {
     closeMenu.style.display = 'block'
@@ -29,12 +31,28 @@ playVideo1.addEventListener('click', () => {
 
 })
 
+let currentIndex = 0;
+function updateActiveTestimonial(index) {
+    ellipses.forEach(el => el.classList.remove('active'));
+    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+    ellipses[index].classList.add('active');
+    testimonials[index].classList.add('active');
+}
+
 ellipses.forEach((ellipse, index) => {
     ellipse.addEventListener('click', () => {
-        ellipses.forEach(el => el.classList.remove('active'));
-        testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-        ellipse.classList.add('active');
-        testimonials[index].classList.add('active');
+        currentIndex = index;
+        updateActiveTestimonial(currentIndex);
     });
+});
+
+rightArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    updateActiveTestimonial(currentIndex);
+});
+
+leftArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    updateActiveTestimonial(currentIndex);
 });
 
