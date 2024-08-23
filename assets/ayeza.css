@@ -185,10 +185,6 @@
   margin-bottom: 20px;
 }
 
-input:invalid ~ .error-tooltip {
-  display: block;
-}
-
 .hero-section .hero-form {
   width: 100%;
   text-align: center;
