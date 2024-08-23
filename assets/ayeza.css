@@ -56,10 +56,10 @@
 
 .main .gray-wave {
   position: absolute;
-  bottom: 10px;
-  width: 100%;
+  bottom: 0px;
+  width: 112%;
   left: 0;
-  z-index: 1;
+  z-index: 8;
 }
 
 .main .container {
@@ -277,6 +277,10 @@ input:valid ~ label {
 }
 .card .img-container .img .card-img {
   width: 100%;
+}
+
+.mobile-hidden {
+  margin-top: 50px !important;
 }
 
 .cards h2 {
@@ -647,6 +651,13 @@ input:valid ~ label {
   .main .wave {
     width: 1200px;
   }
+  .main .gray-wave {
+    bottom: -11px;
+    width: 128%;
+    left: 0;
+    z-index: 8;
+    height: 15%;
+  }
   .hero-section {
     max-width: 600px;
     margin: 40px auto;
@@ -896,6 +907,13 @@ input:valid ~ label {
   }
   .desktop-hidden {
     display: none;
+  }
+  .main .gray-wave {
+    bottom: 4px;
+    width: 1473px;
+    left: 0;
+    z-index: 22;
+    height: 10%;
   }
   .mobile-hidden {
     display: none;
