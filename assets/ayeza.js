@@ -56,3 +56,24 @@ leftArrow.addEventListener('click', () => {
     updateActiveTestimonial(currentIndex);
 });
 
+
+document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    let valid = true;
+    const inputs = document.querySelectorAll('.input-field input, .row select');
+    inputs.forEach(input => {
+        const tooltip = document.getElementById(input.id + '-error');
+        if (!input.validity.valid) {
+            tooltip.style.display = 'block';
+            input.style.borderColor = '#ff6b6b';
+            valid = false;
+        } else {
+            tooltip.style.display = 'none';
+            input.style.borderColor = '';
+        }
+    });
+    if (valid) {
+        window.location.href = "/assets/thankyou.html";
+    }
+});
+

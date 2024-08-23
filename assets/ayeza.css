@@ -1,57 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-:root {
-  --primary-color: #297c6b;
-  --secondary-color: #5bc8af;
-  --bg-color: #194d44;
-  --txt-color: #333;
-  --fade-color: #eaeaea;
-  --transition-all: all 0.2s ease-in;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-  overflow-x: hidden;
-  background: #f5f5f5;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul,
-li {
-  text-decoration: none;
-  list-style: none;
-  cursor: pointer;
-}
-input,
-select,
-button {
-  border: 0;
-  outline: none;
-  font-family: "Montserrat", sans-serif;
-}
-button {
-  background: transparent;
-}
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--txt-color);
-}
 .btn {
   cursor: pointer;
   display: flex;
@@ -114,12 +60,6 @@ h6 {
   width: 100%;
   left: 0;
   z-index: 1;
-}
-
-.container {
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 .main .container {
@@ -209,12 +149,53 @@ h6 {
   margin-top: 0;
 }
 
+.form {
+  position: relative;
+}
+
+.error-tooltip {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  max-width: 200px;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ff6b6b;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input:invalid ~ .error-tooltip {
+  display: block;
+}
+
 .hero-section .hero-form {
   width: 100%;
   text-align: center;
   padding: 50px 25px;
   background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
   box-shadow: 0px 10px 50px 0px #0000001f;
+  border-radius: 10px;
 }
 
 .hero-section .hero-form h2 {
@@ -240,9 +221,11 @@ select.row {
   padding: 15px;
   width: 100%;
   color: #ffffffb2;
+  font-family: Montserrat;
 }
 select option {
   background: var(--primary-color);
+  font-family: Montserrat;
 }
 .input-field input {
   border-radius: 3px;
@@ -250,7 +233,7 @@ select option {
   width: 100%;
   border: 1px solid #ffffffb2;
   background: transparent;
-  color: #fff;
+  color: #ffffffb2;
   outline: none;
 }
 .input-field label {
@@ -273,7 +256,9 @@ input:valid ~ label {
   background: var(--primary-color);
   z-index: 111;
 }
-
+.primary-btn {
+  width: 100%;
+}
 .primary-btn .submit {
   color: #fff;
   font-size: 18px;
@@ -450,6 +435,12 @@ input:valid ~ label {
   background-size: 54%;
   background-color: var(--bg-color);
 }
+.video-container .video-logo {
+  position: absolute;
+  bottom: 20px;
+  z-index: 11;
+  right: 20px;
+}
 .video-container .video {
   width: 50%;
 }
@@ -536,6 +527,7 @@ input:valid ~ label {
   display: block;
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
 }
 .left-arrow {
@@ -557,13 +549,14 @@ input:valid ~ label {
 }
 
 .testimonials .testimonial {
-  display: none; /* Hide all testimonials initially */
+  display: none;
   height: inherit;
   align-items: center;
 }
 
 .testimonials .testimonial.active {
-  display: flex; /* Display only the active testimonial */
+  display: flex;
+  transform: translateX(0);
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -680,6 +673,13 @@ input:valid ~ label {
     display: block;
     position: relative;
   }
+  .video-logo {
+    position: absolute;
+    bottom: 87px;
+    right: 20px;
+    width: 246px !important;
+    z-index: 111111;
+  }
   .video-tablet .video-bg {
     position: absolute;
     top: 50px;
@@ -726,7 +726,7 @@ input:valid ~ label {
     width: 150px;
     position: absolute;
     z-index: 1111;
-    top: 55%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, 50px);
     cursor: pointer;
@@ -791,6 +791,10 @@ input:valid ~ label {
   .btns {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
+  }
+  .primary-btn {
+    margin: auto;
+    width: 70%;
   }
   .arrow {
     display: none;
@@ -879,7 +883,9 @@ input:valid ~ label {
   .hero-section .hero-form h2 {
     font-size: 24px;
   }
-
+  .video-tablet img.play-vid {
+    top: 55%;
+  }
   .hero-section .hero-form .form .row {
     flex-direction: column;
   }
@@ -915,8 +921,12 @@ input:valid ~ label {
     gap: 0;
   }
   .btns {
-    grid-template-rows: repeat(auto, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 50px;
+  }
+  .btns .secondary-btn {
+    max-width: 100%;
   }
   .mobile {
     display: block;
@@ -948,6 +958,28 @@ input:valid ~ label {
   .bg-video-container {
     width: 90%;
   }
+  .testimonials {
+    height: auto;
+    margin-top: 40px;
+  }
+  .testimonials .testimonial .test-img {
+    position: absolute;
+    top: -30px;
+    left: 30px;
+    z-index: 11;
+  }
+  .testimonials .testimonial .test-img img {
+    border-radius: 15px 15px 0 0;
+  }
+  .testimonials .testimonial .test-quote {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+  .testimonials .testimonial .test-quote h3 {
+    margin-top: 100px;
+  }
+
   .footer {
     flex-direction: column;
     align-items: center;

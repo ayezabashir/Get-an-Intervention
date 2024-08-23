@@ -6,6 +6,7 @@
     <title>Ayeza Bashir Assessment</title>
     <link rel="icon" type="image/svg+xml" href="/assets/images/logo.png" />
     <link rel="stylesheet" href="assets/ayeza.css" />
+    <link rel="stylesheet" href="assets/main.css" />
     <script defer src="assets/ayeza.js"></script>
   </head>
   <body>
@@ -56,40 +57,51 @@
             </p>
           </div>
           <div class="hero-content hero-form">
-            <h2>Contact Us</h2>
-            <form class="form">
+            <form class="form" novalidate id="customForm">
               <div class="row">
                 <div class="input-field">
-                  <input required type="text" />
+                  <input id="firstname" required type="text" />
                   <label for="firstname">First Name</label>
+                  <div class="error-tooltip" id="firstname-error">
+                    This field can't be empty. Please fill it in.
+                  </div>
                 </div>
                 <div class="input-field">
-                  <input required type="text" />
+                  <input id="lastname" required type="text" />
                   <label for="lastname">Last Name</label>
+                  <div class="error-tooltip" id="lastname-error">
+                    This field can't be empty. Please fill it in.
+                  </div>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field">
-                  <input required type="email" />
+                  <input id="email" required type="email" />
                   <label for="email">Business Email</label>
+                  <div class="error-tooltip" id="email-error">
+                    This field can't be empty. Please fill it in.
+                  </div>
                 </div>
                 <div class="input-field">
-                  <input required type="text" />
+                  <input id="company" required type="text" />
                   <label for="company">Company</label>
+                  <div class="error-tooltip" id="company-error">
+                    This field can't be empty. Please fill it in.
+                  </div>
                 </div>
               </div>
-              <select class="row" name="country" id="country">
-                <option selected disabled>Country</option>
-                <option value="">Pakistan</option>
-                <option value="">USA</option>
-                <option value="">India</option>
-                <option value="">Canada</option>
-                <option value="">China</option>
+              <select class="row" name="country" id="country" required>
+                <option selected disabled value="">Country</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+                <option value="Canada">Canada</option>
+                <option value="China">China</option>
               </select>
-              <div class="btn primary-btn">
+              <button class="btn primary-btn">
                 <img src="/assets/images/send.svg" alt="" />
-                <button class="submit">Submit</button>
-              </div>
+                <span class="submit">Submit</span>
+              </button>
             </form>
           </div>
         </div>
@@ -384,6 +396,7 @@
       <div class="video">
         <img class="play play-video" src="/assets/images/play-vid.svg" alt="" />
       </div>
+      <img class="video-logo" src="/assets/images/logo.png" alt="" />
     </div>
 
     <div class="video-contaier-tab video-tablet">
@@ -431,6 +444,7 @@
       <img class="tab-bg tab" src="/assets/images/mobile-bg-video.svg" alt="" />
       <img class="play-vid" src="/assets/images/play-vid.svg" alt="" />
       <img class="bg-video-tab" src="/assets/images/bg-video.png" alt="" />
+      <img class="video-logo" src="/assets/images/logo.png" alt="" />
     </div>
 
     <div class="bg-video-container">
