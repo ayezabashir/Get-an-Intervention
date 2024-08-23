@@ -600,7 +600,7 @@ input:valid ~ label {
 .ellipses .ellipse {
   width: 15px;
   height: 15px;
-  background: #eaeaea;
+  background: var(--fade-color);
   border-radius: 50%;
   cursor: pointer;
 }
