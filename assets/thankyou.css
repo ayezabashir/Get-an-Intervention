@@ -11,11 +11,12 @@ body {
   box-shadow: 0px 4px 10px 1px #cfcfcf;
   border: 2px solid var(--primary-color);
   padding: 40px;
-  background: #fff;
+  background: transparent;
   border-radius: 5px;
 }
 
 .thankyou-content {
+  border: 2px solid var(--primary-color);
   background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
   padding: 40px;
   border-radius: 5px;
