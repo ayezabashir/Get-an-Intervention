@@ -653,7 +653,7 @@ input:valid ~ label {
   }
   .main .gray-wave {
     bottom: -11px;
-    width: 128%;
+    width: 183%;
     left: 0;
     z-index: 8;
     height: 15%;
@@ -665,6 +665,9 @@ input:valid ~ label {
   }
   .hero-section .hero-content {
     width: 100%;
+    text-align: center;
+  }
+  .hero-section .hero-content .hero-heading {
     text-align: center;
   }
   .cards .card-content .sec-one {
@@ -726,7 +729,7 @@ input:valid ~ label {
   }
   .video-tablet .bg-video-tab {
     position: relative;
-    top: -56px;
+    top: -60px;
     z-index: -1;
   }
   .video-tablet img.play-vid {
